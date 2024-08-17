@@ -16,8 +16,8 @@ mongoose.connect("mongodb+srv://aksoni0520:2PqiVBY38A7MSMsa@classroom.p5ie5.mong
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-app.use('/api/users', require('./routes/users'));
-app.use('/api/classrooms', require('./routes/classrooms'));
-app.use('/api/timetables', require('./routes/timetables'));
+app.use('/api/users', require('./src/routes/users'));
+app.use('/api/classrooms', require('./src/routes/classrooms'));
+app.use('/api/timetables', require('./src/routes/timetables'));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
