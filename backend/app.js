@@ -6,7 +6,12 @@ require('dotenv').config();
 const app = express();
 const PORT = 5050;
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 mongoose.connect("mongodb+srv://aksoni0520:2PqiVBY38A7MSMsa@classroom.p5ie5.mongodb.net/?retryWrites=true&w=majority&appName=classroom", { useNewUrlParser: true, useUnifiedTopology: true })
