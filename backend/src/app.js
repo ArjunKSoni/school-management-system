@@ -13,6 +13,9 @@ mongoose.connect("mongodb+srv://aksoni0520:2PqiVBY38A7MSMsa@classroom.p5ie5.mong
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 app.use('/api/users', require('./routes/users'));
 app.use('/api/classrooms', require('./routes/classrooms'));
 app.use('/api/timetables', require('./routes/timetables'));
