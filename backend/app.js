@@ -6,11 +6,7 @@ require('dotenv').config();
 const app = express();
 const PORT = 5050;
 
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors({ origin: '*' }));
 
 app.use(express.json());
 
